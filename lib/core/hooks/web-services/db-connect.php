@@ -54,7 +54,7 @@ if ($db_name && is_array($db_hosts)) {
 
         $is_standby = \Sky\Db::isStandby($d);
 
-        if ($is_standby) {
+        if ($is_standby && !$sky_db_use_readonly) {
 
             // PostgreSQL
             // we just connected to a standby
